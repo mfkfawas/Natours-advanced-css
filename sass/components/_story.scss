@@ -51,6 +51,7 @@
 
     //To understand skewX here must read line 12.
     transform: translateX(-3rem) skewX(12deg);
+    position: relative;
   }
 
   //flexible images for responsive web design always need a width.
@@ -65,10 +66,40 @@
 
     // width: 100%;
     height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    transition: all 0.5s ease-out;
   }
 
   &__text {
     //To understand skewX here must read line 12
     transform: skewX(12deg);
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    //To put the el hor centerd & vert some downward
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+    //To remove the small glitch(not needed now i think)
+    backface-visibility: hidden;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    // To bring the caption to center
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    //brightness below 100% - dark
+    filter: blur(3px) brightness(80%);
   }
 }
