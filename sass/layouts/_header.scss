@@ -1,0 +1,43 @@
+.header {
+  height: 95vh;
+  /* here 1st val should be the top image & last val should be the bottom image.*/
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/hero.jpg);
+  background-size: cover;
+  /* when we are resizing the page the top of the image remains there uncropped */
+  background-position: top;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+
+  &__logo-box {
+    /* Abs positioned el's measurements(top, bottom,...) actually starts from parent el which has its position sets to relative.*/
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    /* width will scale accordingly, so we don't even want to specify it.*/
+    height: 3.5rem;
+  }
+
+  /* .logo:hover {
+      animation: moveInRight 1s ease-out;
+    } */
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* These 50% are now no longer in relation to the parent element but of the element itself. 1st -50% shift half of the widthof the element to the left side.
+      And same for the height, -50% shift half of the height of the element to the top.*/
+    transform: translate(-50%, -50%);
+    /* Align text and elements that are treated as text(inline el, inline-block el,...) center.*/
+    text-align: center;
+  }
+}

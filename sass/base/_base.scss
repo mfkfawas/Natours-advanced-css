@@ -1,0 +1,34 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* box-sizing property by itself is not inherited, but by setting it on each and every element on the entire page to inherit,
+  it'll automatically inherit whatever we put on border-box of body.*/
+  /* This is considered a slightly better practice by css community.coz it makes a bit easier to change the box-sizing
+  like in plugins or other components whrere we might want to use a diff property for box-sizing.*/
+  box-sizing: inherit;
+}
+
+html {
+  /* we use 10px inorder to make our life easier. Now 1 rem = 10px coz 1 rem is exactly the root font size. So 10px is
+  now the root font size. Now its really easy to replace all px units with rem, coz all we have to do is to div all pixels
+  by 10 */
+  /* font-size: 10px; */
+  /* Actually its a bad practice to set this font size to pixels. By doing so, we actually overriding the browser font size
+  setting that the user can manually change in the settings*/
+  /* That's why we're going to set a font size to a percentage here, which will translate to a percentage of the font size
+  given by the browser(without zooming: 16px).  */
+  /* If we put 100% here, this would mean that the root font size would be 16 pixel if the user doesnt change anything */
+  /* And if the user does change the default font-size, then it will be changed. */
+
+  // This defines what 1rem is
+  font-size: 62.5%;
+  /* Now whenever the font size is changed by the user, the root-font-size will also get changed.*/
+  /* With this we allow the user to zoom in on the page automatically, not only to change font-size but also to zoom in.*/
+  /* Not exactly zooming, but increasing all of the measurement we have on the page. */
+}
+
+body {
+  box-sizing: border-box;
+}

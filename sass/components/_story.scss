@@ -1,0 +1,74 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: $color-white;
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+
+  //direct child selector, then selected everything(*)(here story__shape & story__text)
+  // & > * {
+  //this is for, when we skewed the story, then all child also got skewed, so we are unskewing the
+  //childs.
+  //But this unskew will not happen on story__shape cz for that selector we used a transform there.
+  //so that take precedence. So use skew(12deg) there too.
+
+  //So now we are applying this style directly to those childs.
+  // transform: skewX(12deg);
+  // }
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    background-color: orangered;
+    float: left;
+
+    //want to define a vectorized shape here once more, we did
+    //that already when we used the clip path prop.
+
+    // In circle() we can define size of a circle and center of circle.
+
+    //1st 50% - size(50% of this el's height or width)
+    //at 50% 50% - hor & ver center of this circle.
+
+    // Inorder for this to work, the el should be floated & dimensions
+    // should be defined.
+
+    // shape-outside all it does is to define where the content floats
+    // around the element.
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+
+    //here we are making the el circle(shape-outside not do it.)
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+
+    //The best way to move corr to an el that is floated is to actually
+    //not mess with the margins or ,... We shoud just use a transform.
+
+    //To understand skewX here must read line 12.
+    transform: translateX(-3rem) skewX(12deg);
+  }
+
+  //flexible images for responsive web design always need a width.
+  //Else a portion of img that fit on the container is only shown.
+  &__img {
+    //coz this img is inside of a shape which has a well defined
+    //width(15rem), so here 100% refers to the width of the parent.
+
+    // This corr img's width is higher than height, so if we set width
+    //100% then there will be an unfilled portion(jst check) so for
+    //such imgs set height 100%
+
+    // width: 100%;
+    height: 100%;
+  }
+
+  &__text {
+    //To understand skewX here must read line 12
+    transform: skewX(12deg);
+  }
+}

@@ -1,0 +1,103 @@
+.btn {
+  /* :link is a pseudo-class. Here its the link pseudo-class. Pseudo-classes are a special state of a selector.
+   So this link here is a state of a button selector. We use pseudo-classes to style elements under a special conditions.*/
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    margin: auto;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: $default-font-size;
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+    /* when we hover the button, then we want some certain styles for the after pseudo el */
+    &::after {
+      background-color: $color-primary;
+      /* scale() simply increase the el. */
+      transform: scaleX(1.4) scaleY(1.6);
+      /* tricks for something fading out*/
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: #777;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
+  &::after {
+    /* Inorder for an after pseudo-el to actually appear on the page, we need to specify its content prop, that's always necessary.*/
+    content: '';
+    /* Its also necessary to specify the display property*/
+    display: inline-block;
+    /* after-pseudo-el is treated like a child of the button */
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    /* Remember that absolute positioning needs to have a reference. And reference is the 1st el with the relative position
+    that it can find.*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* transition property should always have to be put on the initial state */
+    transition: all 0.4s;
+  }
+
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    /* this will automatically apply the styles of 0% before(at initial) the animation starts */
+    animation-fill-mode: backwards;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
+    transform: translateY(0);
+  }
+}

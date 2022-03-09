@@ -1,0 +1,36 @@
+//This is the style that is very specific to the homepage, nowhere else there will be a section-about.
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  margin-top: -20vh;
+}
+
+.section-features {
+  padding: 20rem 0;
+  margin-top: -11.2rem;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/nat-4.jpg);
+  background-size: cover;
+
+  //for skewing the design we can use the clip-path property, But here we are using another nice trick.
+  transform: skewY(-7deg);
+
+  & > * {
+    transform: skewY(7deg);
+  }
+}
+
+.section-tours {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0 15rem 0;
+  margin-top: -11rem;
+}
+
+.section-stories {
+  background-color: $color-grey-light-1;
+  padding: 15rem 0;
+}
