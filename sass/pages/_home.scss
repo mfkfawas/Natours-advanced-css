@@ -31,6 +31,10 @@
 }
 
 .section-stories {
-  background-color: $color-grey-light-1;
+  position: relative;
+  // if we provide bgcolor then our video on the bg is
+  //not visible even if we provide z-index: -1 to the video-container.
+  // background-color: $color-grey-light-1;
   padding: 15rem 0;
+  z-index: 1;
 }

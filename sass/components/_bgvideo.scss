@@ -1,0 +1,32 @@
+//we r aking this a comp cz we can reuse it.
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  // exactly the height of parent
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.15;
+
+  //to posittion video these are necessary cz of vid aspect ratio
+  &__content {
+    height: 100%;
+    width: 100%;
+
+    //it is similar to background-size: cover which we do all the
+    //time with background-images.
+    //object-fit: cover will fill the entire parent while still
+    //maintaining the aspect ratio. The part of the vid that then
+    //dont fit the parent el will simply be clipped off.
+    //Instead of wrking with bg-imgs(bg-img:cover), obj-fit work
+    //with HTML elements/vid.
+    //we can make work with images just as the same - we should
+    //have 1 parent el and in it the img, and then with obj-fit:cover,
+    //we can make the image cover the parent el.
+    object-fit: cover;
+
+    //if obj-fit:cover doesnt give 100% accurate clipping, use
+    //overflow-hidden on .bg-video. No prob with my browser.
+  }
+}

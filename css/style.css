@@ -131,6 +131,19 @@ body {
 .u-margin-top-big {
   margin-top: 8rem; }
 
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.15; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
 .btn {
   /* :link is a pseudo-class. Here its the link pseudo-class. Pseudo-classes are a special state of a selector.
    So this link here is a state of a button selector. We use pseudo-classes to style elements under a special conditions.*/ }
@@ -348,13 +361,14 @@ body {
   width: 75%;
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 3px;
   padding: 6rem;
   padding-left: 9rem;
   font-size: 1.6rem;
   transform: skewX(-12deg); }
   .story__shape {
+    overflow: hidden;
     width: 15rem;
     height: 15rem;
     background-color: orangered;
@@ -467,5 +481,6 @@ body {
   margin-top: -11rem; }
 
 .section-stories {
-  background-color: #f7f7f7;
-  padding: 15rem 0; }
+  position: relative;
+  padding: 15rem 0;
+  z-index: 1; }
