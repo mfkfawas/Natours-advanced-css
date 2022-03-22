@@ -1,6 +1,10 @@
 .btn {
   /* :link is a pseudo-class. Here its the link pseudo-class. Pseudo-classes are a special state of a selector.
    So this link here is a state of a button selector. We use pseudo-classes to style elements under a special conditions.*/
+  //The button doesnt has link/visited pseudo class, sothe
+  //first & is to get these style also aplliieded to <button>
+  //with 'btn' class.
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -12,6 +16,10 @@
     transition: all 0.2s;
     position: relative;
     font-size: $default-font-size;
+
+    // change for the <button> cz button & a doesnt work same.
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {
@@ -28,7 +36,9 @@
     }
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-0.1rem);
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }

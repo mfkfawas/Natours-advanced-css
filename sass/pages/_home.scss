@@ -38,3 +38,32 @@
   padding: 15rem 0;
   z-index: 1;
 }
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+}
+
+.book {
+  // 0deg top-to-bottom, 90deg left-to-right
+  // in linear gradient, if we put same value at at the
+  // same point, will get a solid line.
+  background-image: linear-gradient(
+      105deg,
+      rgba($color-white, 0.9) 0%,
+      rgba($color-white, 0.9) 50%,
+      transparent 50%
+    ),
+    url(../../img/nat-10.jpg);
+  background-size: 100%;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
+  height: 50rem;
+
+  // This form is unique to this page
+  &__form {
+    width: 50%;
+    padding: 6rem;
+  }
+}

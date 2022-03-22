@@ -1,23 +1,32 @@
+//here we r applying !important, which is not a good idea,
+//but we can use it here coz we actually want this to override
+//everything else.
+//Its a normal practice to add this in utility calsses.
+//We know this util classes is more probably used with other classes too,
+//like <div class"form__group u-margin-bottom-medium">, if we didnt
+//apply !important here the margin value from the class 'form__group' may take the
+//precedence & util class will not get applied.
+
 .u-center-text {
-  text-align: center;
+  text-align: center !important;
 }
 
 .u-margin-bottom-big {
-  margin-bottom: 8rem;
+  margin-bottom: 8rem !important;
 }
 
 .u-margin-bottom-medium {
-  margin-bottom: 4rem;
+  margin-bottom: 4rem !important;
 }
 
 .u-margin-bottom-small {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem !important;
 }
 
 .u-margin-top-huge {
-  margin-top: 10rem;
+  margin-top: 10rem !important;
 }
 
 .u-margin-top-big {
-  margin-top: 8rem;
+  margin-top: 8rem !important;
 }
