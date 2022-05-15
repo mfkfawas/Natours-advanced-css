@@ -1,0 +1,55 @@
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background: rgba($color-black, 0.8);
+
+  &__content {
+    @include absCenter;
+    width: 75%;
+    background: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.3);
+    border-radius: 0.5rem;
+    display: table;
+    // Images should not overlap the border-radius that we gave here.
+    overflow: hidden;
+  }
+
+  // lecture 53 min 13
+  // This table & table-cell are used to get the same height to the boxes.
+  //Then it easier to center the content.(here we centered the content of
+  //the popup__right)
+
+  &__left {
+    width: 33.333333%;
+    display: table-cell;
+  }
+
+  &__right {
+    width: 66.6666667%;
+    display: table-cell;
+    vertical-align: middle;
+
+    padding: 3rem 5rem;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+
+    column-count: 2;
+    column-gap: 2rem; // 1em = 14px(1 em is always the font-size of the current el)
+    //just like a border which will exactly in the middle of the  column
+    column-rule: 1px solid $color-grey-light-2;
+
+    hyphens: auto; //to work this, def doc lang.(<html lang='en'>)
+  }
+}
