@@ -160,7 +160,7 @@
         </div>
       </section>
 
-      <section class="section-tours">
+      <section class="section-tours" id="section-tours">
         <div class="u-center-text u-margin-bottom-big">
           <h2 class="heading-secondary">Most Popular Tours</h2>
         </div>
@@ -192,7 +192,7 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$297</p>
                   </div>
-                  <a href="#" class="btn btn--white">Book Now!</a>
+                  <a href="#popup" class="btn btn--white">Book Now!</a>
                 </div>
               </div>
             </div>
@@ -224,7 +224,7 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$427</p>
                   </div>
-                  <a href="#" class="btn btn--white">Book Now!</a>
+                  <a href="#popup" class="btn btn--white">Book Now!</a>
                 </div>
               </div>
             </div>
@@ -256,7 +256,7 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$643</p>
                   </div>
-                  <a href="#" class="btn btn--white">Book Now!</a>
+                  <a href="#popup" class="btn btn--white">Book Now!</a>
                 </div>
               </div>
             </div>
@@ -426,7 +426,7 @@
       </div>
     </footer>
 
-    <div class="popup">
+    <div class="popup" id="popup">
       <div class="popup__content">
         <div class="popup__left">
           <img src="img/nat-8.jpg" alt="Tour Photo" class="popup__img" />
@@ -434,6 +434,8 @@
         </div>
 
         <div class="popup__right">
+          <!-- when this link is hit, section-tours will become the target. -->
+          <a href="#section-tours" class="popup__close">&times;</a>
           <h2 class="heading-secondary u-margin-bottom-small">Start Booking Now</h2>
           <h3 class="heading-tertiary u-margin-bottom-small">
             Important &ndash; Please read these terms before Booking

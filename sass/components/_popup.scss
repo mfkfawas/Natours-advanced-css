@@ -6,6 +6,12 @@
   left: 0;
   z-index: 9999;
   background: rgba($color-black, 0.8);
+  transition: all 0.3s;
+
+  // we cannot animate if display is none
+  // display: none;
+  opacity: 0;
+  visibility: hidden;
 
   &__content {
     @include absCenter;
@@ -16,9 +22,16 @@
     display: table;
     // Images should not overlap the border-radius that we gave here.
     overflow: hidden;
+
+    opacity: 0;
+    // chapter 53 min 12
+    transform: translate(-50%, -50%) scale(0.25);
+
+    // 0.2s is the transition-delay property
+    transition: all 0.5s 0.2s;
   }
 
-  // lecture 53 min 13
+  // lecture 52 min 13
   // This table & table-cell are used to get the same height to the boxes.
   //Then it easier to center the content.(here we centered the content of
   //the popup__right)
@@ -51,5 +64,37 @@
     column-rule: 1px solid $color-grey-light-2;
 
     hyphens: auto; //to work this, def doc lang.(<html lang='en'>)
+  }
+
+  // chapter 53
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // to make the popup appear zoomed in when it is open
+  &:target &__content {
+    opacity: 1;
+    // chapter 53 min 12
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      display: inline-block;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      color: $color-grey-dark;
+      text-decoration: none;
+      font-size: 3rem;
+      line-height: 1;
+      transition: all 0.2s;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
   }
 }
