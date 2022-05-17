@@ -27,6 +27,20 @@ html {
   /* Now whenever the font size is changed by the user, the root-font-size will also get changed.*/
   /* With this we allow the user to zoom in on the page automatically, not only to change font-size but also to zoom in.*/
   /* Not exactly zooming, but increasing all of the measurement we have on the page. */
+
+  @include respond(tab-land) {
+    // width < 1200?
+    font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+  }
+
+  @include respond(tab-port) {
+    // width < 900?
+    font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12, 12/16
+  }
 }
 
 body {
