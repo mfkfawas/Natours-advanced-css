@@ -27,8 +27,8 @@ $breakpoint arguement choices:
 - tab-land
 - big-desktop
 
-ORDER: Base + typography > general layout + grid > page layout > components
-1em = 16px
+ORDER(of writing m queries): Base + typography > general layout + grid > page layout > components
+1em = 16px(here)
 */
 
 @mixin respond($breakpoint) {
@@ -53,6 +53,8 @@ ORDER: Base + typography > general layout + grid > page layout > components
     } //1800
   }
 }
+
+// CASE: Desktop-first
 // The big-desktop media query is a 'min-width' query, which means that it tests for
 // screens of 1800px or more. All the other media queries are 'max-width' queries, so
 // they test for screens with a size smaller then some value (tab-land: 1200px). Next
@@ -62,3 +64,10 @@ ORDER: Base + typography > general layout + grid > page layout > components
 // will be true and the last statement will be executed (tab-land), while you want the
 // smallest query to be executed (phone). This result only will occur when you put your
 // 'max-width' queries in reverse order (largest screen on top).
+
+// https://zellwk.com/blog/media-query-units/
+// https://zellwk.com/blog/rem-vs-em/
+
+// CASE: Mobile-first
+// In this case, the order of statements is reversed. Start with lowest screen size
+// (phone) and go to the highest (big-desktop).

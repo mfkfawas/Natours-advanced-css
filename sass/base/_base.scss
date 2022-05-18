@@ -46,4 +46,10 @@ html {
 body {
   box-sizing: border-box;
   position: relative;
+  /* padding does not get inherited. */
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
