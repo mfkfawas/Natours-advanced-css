@@ -21,6 +21,16 @@
   // transform: skewX(12deg);
   // }
 
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include respond(phone) {
+    transform: skewX(0);
+  }
+
   &__shape {
     //to remove the wierd border when hover
     overflow: hidden;
@@ -28,7 +38,6 @@
     height: 15rem;
     background-color: orangered;
     float: left;
-
     //want to define a vectorized shape here once more, we did
     //that already when we used the clip path prop.
 
@@ -55,6 +64,10 @@
     //To understand skewX here must read line 12.
     transform: translateX(-3rem) skewX(12deg);
     position: relative;
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
   }
 
   //flexible images for responsive web design always need a width.
@@ -76,6 +89,10 @@
   &__text {
     //To understand skewX here must read line 12
     transform: skewX(12deg);
+
+    @include respond(phone) {
+      transform: skewX(0);
+    }
   }
 
   &__caption {

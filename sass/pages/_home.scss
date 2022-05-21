@@ -83,11 +83,44 @@
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
 
-  height: 50rem;
+  @include respond(tab-land) {
+    background-image: linear-gradient(
+        105deg,
+        rgba($color-white, 0.9) 0%,
+        rgba($color-white, 0.9) 65%,
+        transparent 65%
+      ),
+      url(../../img/nat-10.jpg);
+
+    // background-size: 100% - ensures the image fits the containerin the
+    // the x-direction, but not the y-direction.
+
+    // background-size: cover; means the image will fill the element while maintaining
+    //  its aspect ratio, while background-size: 100%; will just make the image fill 100%
+    //  width of the element.
+    background-size: cover;
+  }
+
+  @include respond(tab-port) {
+    background-image: linear-gradient(
+        to right,
+        rgba($color-white, 0.9) 0%,
+        rgba($color-white, 0.9) 100%
+      ),
+      url(../../img/nat-10.jpg);
+  }
 
   // This form is unique to this page
   &__form {
     width: 50%;
     padding: 6rem;
+
+    @include respond(tab-land) {
+      width: 65%;
+    }
+
+    @include respond(tab-land) {
+      width: 100%;
+    }
   }
 }
