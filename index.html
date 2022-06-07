@@ -304,7 +304,7 @@
         <div class="row">
           <div class="story">
             <figure class="story__shape">
-              <img src="img/nat-9.jpg" alt="Perason on a tour" class="story__img" />
+              <img src="img/nat-9.jpg" alt="Person on a tour" class="story__img" />
               <figcaption class="story__caption">Jack Wilson</figcaption>
             </figure>
             <div class="story__text">
@@ -400,7 +400,18 @@
 
     <footer class="footer">
       <div class="footer__logo-box">
-        <img src="img/logo-green-2x.png" alt="Full Logo" class="footer__logo" />
+        <!-- art direction in HTML (lec 61 5:26) -->
+        <picture class="footer__logo">
+          <source
+            srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x"
+            media="(max-width: 37.5em)"
+          />
+          <!-- density switching in HTML (lec 61 0:00) -->
+          <img
+            srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+            alt="Full logo"
+          />
+        </picture>
       </div>
       <div class="row">
         <div class="col-1-of-2">

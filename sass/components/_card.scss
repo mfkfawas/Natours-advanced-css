@@ -188,6 +188,7 @@
   }
 
   @include respond(tab-port) {
+    // here we dont want make the front side as size of back side, and also dont want to make the sides have same height of the container.
     height: auto;
     border-radius: 3px;
     background-color: $color-white;
@@ -195,6 +196,9 @@
 
     &__side {
       height: auto;
+      // An element with position: relative; is positioned relative to its normal position.
+      // Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position.
+      // Other content will not be adjusted to fit into any gap left by the element.
       position: relative;
       box-shadow: none;
 
